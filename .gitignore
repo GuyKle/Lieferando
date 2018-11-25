@@ -1,39 +1,12 @@
-.DS_Store
-.idea/shelf
-/android.tests.dependencies
-/confluence/target
-/dependencies
-/dist
-/local
-/gh-pages
-/ideaSDK
-/clionSDK
-/android-studio/sdk
 out/
-/tmp
 workspace.xml
-*.versionsBackup
-/idea/testData/debugger/tinyApp/classes*
-/jps-plugin/testData/kannotator
-/ultimate/dependencies
-/ultimate/ideaSDK
-/ultimate/out
-/ultimate/tmp
-/js/js.translator/testData/out/
-/js/js.translator/testData/out-min/
 .gradle/
 build/
 !**/src/**/build
 !**/test/**/build
 *.iml
-!**/testData/**/*.iml
 
-# CMake
-cmake-build-debug/
-cmake-build-release/
 
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
 
 # File-based project format
 *.iws
