@@ -3,30 +3,37 @@
 ------------------------------------------------------------------
 ## Intro:
 The assignment was to test the functionality of the search field on the main screen.  
-Therefore, no other tests were written on any other areas that are not directly related to the search field!  
-The assignment specifically named the tests to be written with Java over Selenium WebDriver, and so it was done.  
+Therefore, no other tests were written on any of the other areas that are not directly related to the search field!  
+The assignment specifically mentions that the tests are to be written with Java over Selenium WebDriver, and so it was done, although it might not be the ideal choice of tooling for the technological stack and the experience of the surrounding teams.  
 Multi-browser support included - Chrome and Firefox.  
 Multi-language support included - German and French.  
 
 ## Tools:
-IntelliJ - Gradle project with pure Java running on Selenium webdriver. Test runner is Junit.
+IntelliJ - Gradle project with pure Java8 running on Selenium webdriver. Test runner is Junit, reports exported to HTML.
+
+## Setting up:
+TODO
 
 ## Structural notes, etc:
-chromedriver and geckodriver (linux version!) added to the project for multi-browser support.  
+chromedriver and geckodriver (linux versions!) added to the project for multi-browser support.  
 Test package was separated from main package where usually application code is located.  
-Tests were split into 2 categories - UI and API (respectively frontend and backend).  
-utils package created to host utilities required for certain tests - e.g. DB connection, token fetching, etc.
+Tests were split into 2 categories - UI and API (respectively for frontend and backend tests).  
+utils package created to host utilities required for certain tests - e.g. DB connection, token fetching, page-specific methods etc.
 
 ## Assumption:
 API tests are out of scope for this exercise.  
-Logging should be done properly with a logger.  
-Reporting should be extended, either to HTML or XML.  
-Automating responsive UI is out of scope and also pointless.  
-Automating a test to chech search field maximum size is a waste of effort.  
-Load and performance tests are out of scope for this assignment and should anyways not run on live.  
-Changing locale was done with URL and not with dropdown because testing the dropdown was not a requirement.  
+Logging should be done properly with a logger. e.g. Log4j (crucial for identifying failure points)  
+Automating responsive UI tests is out of scope and also pointless, as I tested manually (using chrome developer tools) and the search field looks the same in all sizes and devices.  
+Automating a test to check search field maximum size is a waste of effort.  
+Load and performance tests are out of scope for this assignment and should anyways not run on live products. Tests were restricted to single agents running simple test flows.  
+Changing locale was done with URL and not with dropdown because testing the dropdown was not a requirement, only testing the search field.  
 
 ## Issues:
-Facebook like message is not responsive.  
-Zipcode resilience is displayed in the result page.  
-Search button disappears completely in a very small window.  
+Facebook like message and other elements in the mainpage are not fully responsive.  
+Zipcode resilience is displayed in the result page.
+
+TODO:
+explain about multilanguage and prop reader, why i didnt implement
+code formatter
+split the test into
+put methods in utils class and PO in page class
