@@ -45,15 +45,15 @@ public class SearchFieldTests {
     }
 
     @Test
-    @DisplayName("TEST - main page is accessible and displaying the correct title")
-    public void testMainPageLoading() {
+    @DisplayName("TEST - load main page")
+    public void testLoadMainPage() {
         HomePage homePage = new HomePage(browser);
 
         assertTrue(homePage.getPageTitle().startsWith("Lieferando.de |")); //assert expected page has opened
     }
 
     @Test
-    @DisplayName("TEST - functionality does not break under SQL injections")
+    @DisplayName("TEST - SQL injections")
     public void testSqlInjections() {
         HomePage homePage = new HomePage(browser);
         String titleText = "Lieferando.de |";
@@ -67,7 +67,7 @@ public class SearchFieldTests {
     }
 
     @Test
-    @DisplayName("TEST - correct error message returned after inputting a zipcode that does not exist")
+    @DisplayName("TEST - non existing zip code")
     public void testNonExistingZipCode() {
         String nonExistingZipcode = "66666";
         String expectedErrorMessageEn = "postcode does not exist";
@@ -81,7 +81,7 @@ public class SearchFieldTests {
     }
 
     @Test
-    @DisplayName("TEST - correct error message returned after inputting a zipcode that is not of valid length")
+    @DisplayName("TEST - invalid zip code")
     public void testInvalidZipCode() {
         String invalidZipcode = "123";
         String expectedErrorMessageEn = "postcode is invalid";
@@ -95,8 +95,8 @@ public class SearchFieldTests {
     }
 
     @Test
-    @DisplayName("TEST - a valid address was entered and should be displayed in the search results")
-    public void testHappyPath() {
+    @DisplayName("TEST - successful search")
+    public void testSuccessfulSearch() {
         String testAddress = "10409";
         HomePage homePage = new HomePage(browser);
 
@@ -108,7 +108,7 @@ public class SearchFieldTests {
     }
 
     @Test
-    @DisplayName("TEST - checks that the google suggests food for mutti")
+    @DisplayName("TEST - google suggestions")
     public void testGoogleSuggestion() {
         String testAddress = "Platz der Republik (Berlin), Berlin";
         HomePage homePage = new HomePage(browser);
