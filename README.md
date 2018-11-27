@@ -11,7 +11,7 @@ Therefore, no other tests were written on any of the other areas that are not di
 ## Tools:
 - IntelliJ - Gradle project with pure Java8 running on Selenium webdriver.  
 - Test runner is Junit, reports exported to HTML (can be found after test run under: [project_folder]/build/reports/tests/test).  
-Prerequisites: Linux env with gradle and git support
+Prerequisites: Linux environment with gradle and git support
 
 ## Setting up:
 #### Clone the git from the repository
@@ -19,7 +19,8 @@ $ git clone [git_repo]
 
 #### Browse to the folder where the repository was cloned and run
 $ gradle clean test -Dbrowser=[browser_name]  
-(default is chrome, parameter is case insensitive)
+(default is chrome when running simply "gradle clean test". The parameter is case insensitive)
+NOTE: Please don't forget to set the environment settings when running the tests from IDE
 
 ## Structural notes, etc:
 - chromedriver and geckodriver (linux versions!) added to the project for multi-browser support.  
