@@ -2,11 +2,11 @@
     @ 2018 Guy Klein
 ------------------------------------------------------------------
 ## Intro:
-The assignment was to test the functionality of the search field on the main screen.  
+- The assignment was to test the functionality of the search field on the main screen.  
 Therefore, no other tests were written on any of the other areas that are not directly related to the search field!  
-The assignment specifically mentions that the tests are to be written with Java over Selenium WebDriver, and so it was done, although it might not be the ideal choice of tooling for the technological stack and the experience of the surrounding teams.  
-Multi-browser support included - Chrome and Firefox.  
-Multi-language support included - German and French.  
+- The assignment specifically mentions that the tests are to be written with Java over Selenium WebDriver, and so it was done, although it might not be the ideal choice of tooling for the technological stack and the experience of the surrounding teams.  
+- Multi-browser support included - Chrome and Firefox.  
+- Multi-language support included - German and French.  
 
 ## Tools:
 IntelliJ - Gradle project with pure Java8 running on Selenium webdriver. Test runner is Junit, reports exported to HTML.  
@@ -26,7 +26,7 @@ $ gradle clean test -D[browser_name]
 - Tests were split into 2 categories - UI and API (respectively for frontend and backend tests).  
 - Tests (with abstract base class) and pageobjects\methods could and should be split into more classes, but this should be done with a bigger picture in mind, not for something as basic as "test ONLY the search field functionality". In such case, it is perfectly fine to have 6 short tests in the same class.  
 - utils package created to host utilities required for certain tests - e.g. DB connection, multi-language support, token fetching, etc.
-- Foundations for multi-language support can be found under utils in property files, but were not fully implemented due to the effort required in implementing a properties handler. Same goes for env properties, but in the case of the exercise there was only 1 env - www.lieferando.de
+- Foundations for multi-language support can be found under utils in property files, but were not implemented as properties due to the effort required in implementing a properties handler. Same goes for environment properties, but in the case of the exercise there was only 1 environment - www.lieferando.de
 
 ## Assumption:
 - API tests are out of scope for this exercise.  
