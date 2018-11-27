@@ -11,9 +11,6 @@ import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import sun.java2d.cmm.Profile;
 import ui.pages.HomePage;
 import ui.pages.ResultsPage;
 
@@ -30,8 +27,7 @@ public class SearchFieldTests {
     public void setup() {
         System.setProperty("webdriver.gecko.driver", "./webdrivers/geckodriver");
         System.setProperty("webdriver.chrome.driver", "./webdrivers/chromedriver");
-
-        if (System.getProperty("browser").toLowerCase().equals("firefox")) {
+        if (System.getProperty("browser").toLowerCase().equals("firefox")){
             FirefoxOptions option = new FirefoxOptions();
             option.addPreference("dom.webnotifications.enabled", false);
             option.addPreference("app.update.enabled", false);
@@ -50,7 +46,7 @@ public class SearchFieldTests {
 
     @Test
     @DisplayName("TEST - main page is accessible and displaying the correct title")
-    public void testLoadMainPage() {
+    public void testMainPageLoading() {
         HomePage homePage = new HomePage(browser);
 
         assertTrue(homePage.getPageTitle().startsWith("Lieferando.de |")); //assert expected page has opened
@@ -101,6 +97,7 @@ public class SearchFieldTests {
     @Test
     @DisplayName("TEST - a valid address was entered and should be displayed in the search results")
     public void testHappyPath() {
+        System.out.println("");
         String testAddress = "10409";
         HomePage homePage = new HomePage(browser);
 
@@ -113,7 +110,7 @@ public class SearchFieldTests {
 
     @Test
     @DisplayName("TEST - checks that the google suggests food for mutti")
-    public void testGoogleSuggestions() {
+    public void testGoogleSuggestion() {
         String testAddress = "Platz der Republik (Berlin), Berlin";
         HomePage homePage = new HomePage(browser);
 

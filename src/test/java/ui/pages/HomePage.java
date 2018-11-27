@@ -1,6 +1,9 @@
 package ui.pages;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 public class HomePage {
     private static String HOMEPAGE_URL="http://www.lieferando.de";
@@ -18,8 +20,6 @@ public class HomePage {
     public HomePage(WebDriver browser){
         this.browser=browser;
         browser.get(HOMEPAGE_URL+"/en/");
-        new WebDriverWait(browser, 20).until(webDriver ->
-                ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
         //Initialise Elements
         PageFactory.initElements(browser, this);
     }
