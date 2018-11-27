@@ -18,7 +18,7 @@ $ git clone <gitrepo>
 
 ### Browse to the folder where the repository was cloned and run
 $ gradle clean test -D<browser name>
-* default is chrome, parameter is case insensitive
+(default is chrome, parameter is case insensitive)
 
 ## Structural notes, etc:
 - chromedriver and geckodriver (linux versions!) added to the project for multi-browser support.  
