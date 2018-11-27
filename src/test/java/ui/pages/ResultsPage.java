@@ -20,23 +20,22 @@ public class ResultsPage {
         PageFactory.initElements(browser, this);
     }
 
-    //page objects
-    @FindBy(id="dropdown-location")
-    WebElement PO_locationDropDown;
+    @FindBy(className="atom-dropdown-text")
+    WebElement PO_location;
 
     //getters and setters
 
     //returns the text of the search that was committed
-    public String getLocation (){
+    public String getLocation (String searched){
         try {
             WebDriverWait wait = new WebDriverWait(browser, 10);
-            wait.until(ExpectedConditions.visibilityOfAllElements(PO_locationDropDown));
+            wait.until(ExpectedConditions.textToBePresentInElement(PO_location,searched));
         }
         catch (NoSuchElementException e)
         {
             System.out.println("location dropdown did not appear within 10 seconds");
         }
-        return PO_locationDropDown.getText();
+        return PO_location.getText();
     }
 
     public String getPageTitle() {

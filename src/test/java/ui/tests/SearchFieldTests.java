@@ -97,7 +97,6 @@ public class SearchFieldTests {
     @Test
     @DisplayName("TEST - a valid address was entered and should be displayed in the search results")
     public void testHappyPath() {
-        System.out.println("");
         String testAddress = "10409";
         HomePage homePage = new HomePage(browser);
 
@@ -105,7 +104,7 @@ public class SearchFieldTests {
         homePage.clickSubmitButton();
 
         ResultsPage resultspage = new ResultsPage(browser);
-        assertTrue(resultspage.getLocation().contains(testAddress));
+        assertTrue(resultspage.getLocation(testAddress).contains(testAddress));
     }
 
     @Test
