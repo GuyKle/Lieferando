@@ -9,7 +9,8 @@ Therefore, no other tests were written on any of the other areas that are not di
 - Multi-language support included - German and French.  
 
 ## Tools:
-IntelliJ - Gradle project with pure Java8 running on Selenium webdriver. Test runner is Junit, reports exported to HTML.  
+- IntelliJ - Gradle project with pure Java8 running on Selenium webdriver.  
+- Test runner is Junit, reports exported to HTML (can be found after test run under: [project_folder]/build/reports/tests/test).  
 Prerequisites: Linux env with gradle and git support
 
 ## Setting up:
