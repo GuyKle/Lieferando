@@ -19,7 +19,7 @@ $ git clone [git_repo]
 
 #### Browse to the folder where the repository was cloned and run
 $ gradle clean test -Dbrowser=[browser_name]  
-(default is chrome when running simply "gradle clean test". The parameter is case insensitive)
+(default is chrome when running simply "gradle clean test". The parameter is case insensitive)  
 NOTE: Please don't forget to set the environment settings when running the tests from IDE
 
 ## Structural notes, etc:
