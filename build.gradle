@@ -23,6 +23,7 @@ test {
 
 tasks.withType(Test) {
     //throwing logging of the test run
+    systemProperties["browser"]=System.getProperty("browser","chrome")
     testLogging {
         showStandardStreams = true
         exceptionFormat = 'full'

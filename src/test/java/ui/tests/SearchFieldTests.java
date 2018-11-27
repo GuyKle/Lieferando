@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.Test;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import ui.pages.HomePage;
 import ui.pages.ResultsPage;
 
@@ -22,7 +23,13 @@ public class SearchFieldTests {
     public void setup() {
         System.setProperty("webdriver.gecko.driver", "./webdrivers/geckodriver");
         System.setProperty("webdriver.chrome.driver", "./webdrivers/chromedriver");
-        browser = new ChromeDriver();
+        if (System.getProperty("browser").toLowerCase().equals("firefox")){
+            browser = new FirefoxDriver();
+        }
+        else {
+            browser = new ChromeDriver();
+        }
+
         browser.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //setting the generic timeout
     }
 
