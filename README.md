@@ -14,10 +14,10 @@ Prerequisites: Linux env with gradle and git support
 
 ## Setting up:
 ### Clone the git from the repository
-$ git clone <gitrepo>
+$ git clone [git_repo]
 
 ### Browse to the folder where the repository was cloned and run
-$ gradle clean test -Dbrowser_name  
+$ gradle clean test -D[browser_name]  
 (default is chrome, parameter is case insensitive)
 
 ## Structural notes, etc:
