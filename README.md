@@ -1,4 +1,4 @@
-# Getting started with Page Object Pattern for your Selenium tests
+# Assignment for review
     @ 2018 Guy Klein
 ------------------------------------------------------------------
 ## Intro:
