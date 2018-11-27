@@ -9,10 +9,16 @@ Multi-browser support included - Chrome and Firefox.
 Multi-language support included - German and French.  
 
 ## Tools:
-IntelliJ - Gradle project with pure Java8 running on Selenium webdriver. Test runner is Junit, reports exported to HTML.
+IntelliJ - Gradle project with pure Java8 running on Selenium webdriver. Test runner is Junit, reports exported to HTML.  
+Prerequisites: Linux env with gradle and git support
 
 ## Setting up:
-TODO
+### Clone the git from the repository
+$ git clone <gitrepo>
+
+### Browse to the folder where the repository was cloned and run
+$ gradle clean test -D<browser name>
+* default is chrome, parameter is case insensitive
 
 ## Structural notes, etc:
 chromedriver and geckodriver (linux versions!) added to the project for multi-browser support.  
@@ -21,19 +27,16 @@ Tests were split into 2 categories - UI and API (respectively for frontend and b
 utils package created to host utilities required for certain tests - e.g. DB connection, token fetching, page-specific methods etc.
 
 ## Assumption:
-API tests are out of scope for this exercise.  
-Logging should be done properly with a logger. e.g. Log4j (crucial for identifying failure points)  
-Automating responsive UI tests is out of scope and also pointless, as I tested manually (using chrome developer tools) and the search field looks the same in all sizes and devices.  
-Automating a test to check search field maximum size is a waste of effort.  
-Load and performance tests are out of scope for this assignment and should anyways not run on live products. Tests were restricted to single agents running simple test flows.  
-Changing locale was done with URL and not with dropdown because testing the dropdown was not a requirement, only testing the search field.  
+- API tests are out of scope for this exercise.  
+- Logging should be done properly with a logger. e.g. Log4j (crucial for identifying failure points).  
+- Code formatter could also be used for more readable code, but is not a must have therefore I did not include it.  
+- Automating responsive UI tests is out of scope and also pointless, as I tested manually (using chrome developer tools) and the search field looks the same in all sizes and devices.  
+- Automating a test to check search field maximum size is a waste of effort.  
+- Load and performance tests are out of scope for this assignment and should anyways not run on live products. Tests were restricted to single agents running simple test flows.  
+- Changing locale was done with URL and not with dropdown because testing the dropdown was not a requirement, only testing the search field.  
+- Tests (with abstract base class) and pageobjects\methods could and should be split into more classes, but this should be done with a bigger picture in mind, not for something as basic as "test ONLY the search field functionality". In such case, it is perfectly fine to have 6 short tests in the same class.  
+- Foundations for multi-language support can be found under utils in property files, but were not fully implemented due to the effort required in implementing a properties handler. Same goes for env properties, but in the case of the exercise there was only 1 env - www.lieferando.de
 
-## Issues:
+## Issues I found while testing:
 Facebook like message and other elements in the mainpage are not fully responsive.  
 Zipcode resilience is displayed in the result page.
-
-TODO:
-explain about multilanguage and prop reader, why i didnt implement
-code formatter
-split the test into
-put methods in utils class and PO in page class
